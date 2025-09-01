@@ -15,6 +15,10 @@ body {
   background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Container */
 .container {
   width: 90%;
@@ -29,7 +33,8 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(5px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
@@ -122,17 +127,19 @@ body {
 /* Buttons */
 .btn {
   display: inline-block;
-  background: #007acc;
+  background: linear-gradient(135deg, #007acc, #00d4ff);
   color: #fff;
   padding: 0.75rem 1.5rem;
   margin-top: 1rem;
   border-radius: 4px;
   text-decoration: none;
-  transition: background 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn:hover {
-  background: #005fa3;
+  background: linear-gradient(135deg, #005fa3, #00a0cc);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
 }
 
 /* Contact Form */
@@ -177,6 +184,18 @@ footer {
 
 footer p {
   font-size: 0.9rem;
+}
+
+/* Fade In Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Responsive Adjustments */
